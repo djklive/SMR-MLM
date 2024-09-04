@@ -1,0 +1,519 @@
+@font-face {
+    font-family: logo;
+    src: url(../POLICES/Poppins-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+body{ 
+    font-family: logo;  
+}
+
+.commentaireEntete{/*entete de la page le texte qui defile*/
+    height: 30px;
+    display: flex;
+    align-items: center;
+    
+    background-color: #00203f;
+}
+.commentaireEntete em{/*creation animation*/
+    color: #ffffffda;
+    font-size: 10px;
+   font-weight: bold;
+   letter-spacing: 1.5;
+    animation: entete 10s infinite;
+}
+@keyframes entete {/*animation sur le texte*/
+    from{
+        transform: translateX(0%);
+       
+    }
+    
+    to{
+        transform: translateX(490%);
+        
+    }
+    
+}
+/* prenave ce qui est au dessus des lien de navigation dela navbar logo,nom, image chario et compte  */
+header nav{
+   
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.411);
+
+}
+header nav .prelien{ /*diposition du logo et de image 5et bouton s'incrire*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    height: 70px;
+    z-index: 1000;
+    
+}
+
+header nav .prelien .logo{/*logo   */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: logo 2s ease;
+    font-family: logo;
+    width: 100%;
+   
+    /* text-transform: uppercase; */
+}
+@keyframes logo {
+    from{
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+header nav .prelien .logo h2{
+   position: relative;
+}
+header nav .prelien .logo h2::after {/*trait en dessous du titre creation*/
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    bottom: -3px;
+    background-color: #19e649;
+    width: 100%; 
+    transform: scaleX(0);   
+    transition: .5s;
+    transform-origin: left;
+}
+header nav .prelien .logo h2:hover::after{/*hover trait en dessous du titre*/
+    
+    transform: scaleX(100%);   
+     
+}
+header nav .prelien .logo h2 span{/*le s et l du logo   */
+    font-weight: 900;
+    color: rgb(18, 151, 0);
+    font-size: 40px;
+}
+header nav .prelien .logo img{/*taille de limage du lgoo*/
+    width: 60px;
+    height: 50px;
+}
+header nav .prelien .imageEtLogin{/*disposition des images et du login de la prenav*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    animation: imageEtLogin 2s ease;
+}
+@keyframes imageEtLogin {
+    from{
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+header nav .prelien .imageEtLogin img{/*taille de image de la prenav*/
+    width:30px;
+
+ 
+}
+header nav .prelien .imageEtLogin .user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    
+    
+}
+
+header nav .prelien .imageEtLogin .user .userover{/*Creation du userflot ce qui apparait quand on met la souris sur le bonhomme*/
+    position: absolute;
+    top: 30px;
+    left: -83px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius:5px ;
+    border: 1px solid #c9c9c998;
+    
+    width: 200px;
+    transition: .6s;
+    transform:scale(0) ;
+    transform-origin: top;
+    
+}
+
+header nav .prelien .imageEtLogin .user .userover h4{
+      margin-bottom: 5%;
+}
+
+header nav .prelien .imageEtLogin .user:hover .userover{/*apparition de la zonne*/
+    transform: scale(100%);
+    
+}
+header nav .prelien .imageEtLogin .user .userover hr{
+    width: 90%;
+    margin: 20px;
+    border: none;
+    background-color: #19e649;
+    height: 1px;
+}
+header nav .prelien .imageEtLogin .user .userover .lienUser a{
+    text-decoration: none;
+    color: #363636c4;
+    font-weight: 400;
+    transition: .2s;
+}
+header nav .prelien .imageEtLogin .user .userover .lienUser a:hover{
+    text-decoration: underline;
+    color: #000000;
+    
+}
+
+header nav .prelien .imageEtLogin img:hover{/*taille de image de la prenav*/
+    /* width:33px; */
+    border-bottom: 2px solid #000000;
+    border-radius: 1px;
+    cursor: pointer;
+ 
+}
+header .prelien .imageEtLogin .lien{/*bouton sincrire de la prenav*/
+   text-decoration: none;
+   font-weight: 900;
+   font-size: 17px;
+   color: white;
+   border: 1px solid #19e649;
+   background-color:#19e649;
+   padding: 5px 10px 5px 10px;
+   border-radius: 10px;
+}
+header .prelien .imageEtLogin .lien:hover{/* hover bouton sincrire de la prenav*/
+    font-weight: 900;
+   font-size: 17px;
+   color: #19e649;
+   background-color:white;
+   padding: 5px 10px 5px 10px;
+   border-radius: 10px;
+
+}
+/* lien de navigation */
+
+header nav .lienNav{ /*disposition des lien de navigation*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    height: 50px;
+    margin-top: 20px;
+   
+   
+}
+header nav .lienNav .left,header nav .lienNav .right { /*espace entre les lien de navigation*/
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+header nav .lienNav .left a,header nav .lienNav .right a { /*aspect des lien de navigation*/
+    width: max-content;
+    font-weight: 600;
+    color: rgba(65, 65, 65, 0.63);
+    text-decoration: none;
+    height: 100%;
+    transform: .6s;
+    animation: lienNav 2s ease;
+
+}
+@keyframes lienNav {
+    from{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header nav .lienNav .left a:hover,header nav .lienNav .right a:hover,#selection{ /*hover des lien de navigation*/
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    
+    
+}
+main{
+    height: 1000vh;
+}
+
+*::-webkit-scrollbar{
+    width: 1px;
+    
+    
+}
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+/* Fin de configuration de la navbar */
+
+
+
+/* start footer */
+
+.footer {
+    line-height: 1.5;
+    background-color: #00203f;
+    margin-top: 150px;
+    padding: 70px 0;
+    color: #fff;
+}
+
+.footer .container {
+    width: 100%;
+    max-width: 150vh;
+    margin: auto;
+}
+
+.footer .container .footer__mail {
+    height: 12em;
+    width: 100%;
+    margin: 2em 0;
+    padding: 1em 4em;
+    background-color: rgba(190, 206, 119, 0.762);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .container .footer__mail .footer__mail-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer .container .footer__mail .footer__mail-logo img{
+    width: 170px;
+    height: 150px;
+}
+
+.footer .container .footer__mail .footer__mail-logo span{
+    color: #2bab0d;
+    font-size: 2em;
+}
+
+.footer .container .footer__mail .footer__mail-logo h3 {
+    letter-spacing: 1.5px;
+    font-size: 1.6em;
+}
+
+.footer .container .footer__mail .footer__mail-search {
+    display: flex;
+    gap: 2em;
+}
+
+.footer .container .footer__mail .footer__mail-search input{
+    background: none;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    height: 3em;
+    width: 25em;
+    padding: .5em 1em;
+    border-radius: 5px;
+    transition: .3s ease;
+}
+
+/* .footer .container .footer__mail .footer__mail-search input:hover {
+    background-color: #00203f;
+    color: #fff;
+} */
+
+.footer .container .footer__mail .footer__mail-search input:focus{
+    border: 2px solid rgba(42, 171, 13, 0.559);
+}
+
+.footer .container .footer__mail .footer__mail-search button{
+    background: none;
+    border: none;
+    outline: none;
+    background-color: #00203f;
+    height: 3em;
+    width: 7em;
+    padding: .5em 1em;
+    border-radius: 5px;
+    color: #fff;
+    transition: .3s ease;
+}
+
+.footer .container .footer__mail .footer__mail-search button:hover {
+    background-color: #2bab0d;
+
+}
+
+.footer .container .row {
+    display: flex;
+}
+
+.footer .container .row .footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer .container .row .footer-col h4 {
+    font-size: 1.5em;
+    font-weight: 800;
+    position: relative;
+}
+
+.footer .container .row .footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background-color: #2bab0d;
+    height: 2px;
+    box-sizing: border-box;
+    width: 40%;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: .5s ease;
+}
+
+.footer .container .row .footer-col h4:hover::after {
+    transform: scaleX(1);
+}
+
+.footer .container .row .footer-col .text {
+    color: #ffffffaa;
+}
+
+.footer .container .row .footer-col .text, .contact {
+    margin-top: 1em;
+}
+
+.footer .container .row .footer-col .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: #bbbbbb;
+}
+
+.footer .container .row .footer-col .contact-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.footer .container .row .footer-col .contact-links img{
+    width: 20px;
+    height: 20px;
+}
+
+.footer .container .row .footer-col .links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.footer .container .row .footer-col .links a{
+    transition: all .3s ease;
+}
+
+.footer .container .row .footer-col .links a:hover{
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.footer .container .row .footer-col div a {
+    text-decoration: none;
+    color: #bbbbbb;
+    cursor: pointer;
+    margin-top: .5em;
+}
+
+.footer .container .row .footer-col .social-links {
+    display: flex;
+    gap: 2em;
+}
+
+.footer .container .row .footer-col .social-links a{
+    font-size: 2em;
+    width: 100%;
+    transition: .5s ease;
+}
+
+.footer .container .row .footer-col .social-links a:hover{
+    color: #2bab0d;
+}
+
+.footer hr {
+    margin-top: 4em;
+    color: #bbbbbb;
+}
+
+.footer .end-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.footer .end-footer .copyright {
+    color: #bbbbbb;
+}
+
+.footer .end-footer .terms {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+}
+
+.footer .end-footer .terms div {
+    width: 10px;
+    height: 10px;
+    color: #2bab0d;
+    font-weight: 600;
+}
+
+.footer .end-footer .terms a {
+    color: #2bab0d;
+    text-decoration: none;
+}
+
+@media screen and (max-width:450px) {
+
+    .footer .container {
+        max-width: none;
+    }
+
+    .footer .container .footer__mail {
+        flex-direction: column;
+    }
+
+    .footer .container .footer__mail .footer__mail-search input{
+        width: 14em;
+    }
+
+    .footer .container .row {
+        flex-wrap: wrap;
+    }
+
+    .footer .container .row .footer-col{
+        width: 100%;
+    }
+}

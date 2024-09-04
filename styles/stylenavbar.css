@@ -1,0 +1,264 @@
+@font-face {
+    font-family: logo;
+    src: url(../police/Poppins-Regular.ttf);
+}
+
+*{
+    outline: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: logo;
+   
+}
+
+.commentaireEntete{/*entete de la page le texte qui defile*/
+    height: 20px;
+    display: flex;
+    align-items: center;
+    
+    background-color: #00203f;
+}
+.commentaireEntete em{/*creation animation*/
+    color: #ffffffda;
+    font-size: 10px;
+   
+    animation: entete 10s infinite;
+}
+@keyframes entete {/*animation sur le texte*/
+    from{
+        transform: translateX(0);
+       
+    }
+    
+    to{
+        transform: translateX(100%);
+        
+    }
+    
+}
+/* prenave ce qui est au dessus des lien de navigation dela navbar logo,nom, image chario et compte  */
+header nav{
+   
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.411);
+
+}
+header nav .prelien{ /*diposition du logo et de image et bouton s'incrire*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    height: 70px;
+    
+}
+
+header nav .prelien .logo{/*logo   */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: logo 2s ease;
+    font-family: logo;
+    width: 100%;
+   
+    /* text-transform: uppercase; */
+}
+@keyframes logo {
+    from{
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+header nav .prelien .logo h2{
+   position: relative;
+}
+header nav .prelien .logo h2::after {/*trait en dessous du titre creation*/
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    bottom: -3px;
+    background-color: #19e649;
+    width: 100%; 
+    transform: scaleX(0);   
+    transition: .5s;
+    transform-origin: left;
+}
+header nav .prelien .logo h2:hover::after{/*hover trait en dessous du titre*/
+    
+    transform: scaleX(100%);   
+     
+}
+header nav .prelien .logo h2 span{/*le s et l du logo   */
+    font-weight: 900;
+    color: rgb(18, 151, 0);
+    font-size: 40px;
+}
+header nav .prelien .logo img{/*taille de limage du lgoo*/
+    width: 60px;
+    height: 50px;
+}
+header nav .prelien .imageEtLogin{/*disposition des images et du login de la prenav*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    animation: imageEtLogin 2s ease;
+}
+@keyframes imageEtLogin {
+    from{
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+header nav .prelien .imageEtLogin img{/*taille de image de la prenav*/
+    width:30px;
+
+ 
+}
+header nav .prelien .imageEtLogin .user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    
+    
+}
+
+header nav .prelien .imageEtLogin .user .userover{/*Creation du userflot ce qui apparait quand on met la souris sur le bonhomme*/
+    position: absolute;
+    top: 30px;
+    left: -83px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius:5px ;
+    border: 1px solid #c9c9c998;
+    
+    width: 200px;
+    transition: .6s;
+    transform:scale(0) ;
+    transform-origin: top;
+    
+}
+header nav .prelien .imageEtLogin .user:hover .userover{/*apparition de la zone*/
+    transform: scale(100%);
+    
+}
+header nav .prelien .imageEtLogin .user .userover hr{
+    width: 90%;
+    margin: 20px;
+    border: none;
+    background-color: #19e649;
+    height: 1px;
+}
+
+header nav .prelien .imageEtLogin .user .userover .lienUser a{
+    text-decoration: none;
+    color: #363636c4;
+    font-weight: 400;
+    transition: .2s;
+}
+header nav .prelien .imageEtLogin .user .userover .lienUser a:hover{
+    text-decoration: underline;
+    color: #000000;
+    
+}
+
+header nav .prelien .imageEtLogin img:hover{/*taille de image de la prenav*/
+    /* width:33px; */
+    border-bottom: 2px solid #000000;
+    border-radius: 1px;
+    cursor: pointer;
+ 
+}
+header .prelien .imageEtLogin .lien{/*bouton s’inscrire de la prenav*/
+   text-decoration: none;
+   font-weight: 900;
+   font-size: 17px;
+   color: white;
+   border: 1px solid #19e649;
+   background-color:#19e649;
+   padding: 5px 10px 5px 10px;
+   border-radius: 10px;
+}
+header .prelien .imageEtLogin .lien:hover{/* hover bouton s’inscrire de la prenav*/
+    font-weight: 900;
+   font-size: 17px;
+   color: #19e649;
+   background-color:white;
+   padding: 5px 10px 5px 10px;
+   border-radius: 10px;
+
+}
+/* lien de navigation */
+
+header nav .lienNav{ /*disposition des lien de navigation*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    height: 50px;
+    margin-top: 20px;
+   
+   
+}
+header nav .lienNav .left,header nav .lienNav .right { /*espace entre les lien de navigation*/
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+header nav .lienNav .left a,header nav .lienNav .right a { /*aspect des lien de navigation*/
+    width: max-content;
+    font-weight: 600;
+    color: rgba(65, 65, 65, 0.63);
+    text-decoration: none;
+    height: 100%;
+    transform: .6s;
+    animation: lienNav 2s ease;
+
+}
+@keyframes lienNav {
+    from{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header nav .lienNav .left a:hover,header nav .lienNav .right a:hover,#selection{ /*hover des lien de navigation*/
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    
+    
+}
+main{
+    height: 300vh;
+}
+
+*::-webkit-scrollbar{
+    width: 1px;
+    
+    
+}
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}

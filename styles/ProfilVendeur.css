@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: logo;
+}
+
+@font-face {
+    font-family: logo;
+    src: url(../POLICES/Poppins-Regular.ttf);
+}
+
+.vendeur {
+    display: flex;
+    flex-direction: row;
+}
+
+.photo {
+    background-color: white;
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+}
+
+.profil {
+    position: absolute;
+    background: radial-gradient(#fff, rgba(25, 230, 73, 0.3));
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 11rem;
+    z-index: 2;
+}
+
+.profil h1 {
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profil p {
+    position: relative;
+    text-align: justify;
+    padding: 0.5rem;
+}
+
+.produits {
+    margin-left: 17rem;
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 24.5rem);
+    grid-template-rows: repeat(3, 25fr);
+    gap: .7rem;
+}
+
+.produits .produit {
+    background: radial-gradient(#fff, #eaf2fb);
+    border-radius: 10px;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+} 
+
+.produits .produit img {
+    height: 10rem;
+    width: 90%;
+    margin: auto;
+}
+
+.produits .produit h1 {
+    position: relative;
+    text-align: center;
+}
+
+.produits .produit p {
+    position: relative;
+    padding: 1rem;
+    text-align: justify;
+    left: 0.2rem;
+}
+
+.produits .produit h3{
+    margin: auto;
+}
+
+.produits .produit input {
+    margin: auto;
+    background-color: #19e649;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: 0.2s;
+}
+
+.produits .produit input:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #19E649;
+    border: 1px solid #19E649;
+    font-weight: bold;
+}
+
+.footer {
+    width: 80%;
+    margin-left: 20%;
+}

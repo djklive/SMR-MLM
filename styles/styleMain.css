@@ -1,0 +1,470 @@
+/* Importez la police Montserrat depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Styles globaux */
+* {
+    /* Réinitialiser les margin et le padding */
+    margin: 0;
+    padding: 0;
+    /* Définir la taille de la boîte (box-sizing) sur border-box pour tous les éléments */
+    box-sizing: border-box;
+    /* Définir la famille de polices sur Montserrat */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styles pour la section products__pills qui va servir de carousel*/
+.products__pills {
+    /* Définir la marge et la largeur maximale de la section */
+    margin: 4% 5%;
+    max-width: 1200px;
+    width: 95%;
+    margin: auto;
+    /* Définir l'opacité initiale et la transformation de l'animation */
+    opacity: 0;
+    transform: translateY(20px);
+    /* Définir l'effet de transition pour l'animation */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Styles pour la section des products__pills lorsqu'elle est animée par la classe animate*/
+.products__pills.animate {
+    /* Définir l'opacité finale et la transformation final pour l'animation */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles pour l'element .products__pills .products__pills_head */
+.products__pills .products__pills_head {
+    /* Afficher l'element head en tant que conteneur flexible pour aligner le titre et les fleches */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2% 0;
+}
+
+/* Styles pour le titre dans l'element .products__pills .products__pills_head */
+.products__pills .products__pills_head .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Styles pour les fleches  */
+.products__pills .products__pills_head .arrow {
+    /* Afficher le conteneur de flèches en tant que conteneur flexible pour les aligner */
+    display: flex;
+    gap: 1rem;
+}
+
+/* Styles pour les images de flèches dans le conteneur */
+.products__pills .products__pills_head .arrow img {
+    /* Définir la largeur et la couleur d'arrière-plan des images de flèches avec un arrondi */
+    width: 30px;
+    background-color: #bbbbbb;
+    border-radius: 50px;
+    padding: 10px;
+    opacity: 0.5;
+}
+
+/* Styles pour les images de flèches au survol */
+.products__pills .products__pills_head .arrow img:hover {
+    /* Définir l'opacité et la transformation des images de flèches en survol */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Styles pour l'image de la flèche gauche */
+.products__pills .products__pills_head .arrow #d{
+    /* Masquer l'image de la flèche gauche par défaut
+     et qui va être utiliser par la fonction HandleSingleButtons dans scriptMain.js 
+     pour faire disparaître le bouton quand la liste est finie*/
+    display: none;
+}
+
+/* Styles pour l'image de la flèche droite */
+.products__pills .products__pills_head .arrow #g{
+    /* Faites pivoter l'image de la flèche droite de 180 degrés */
+    transform: rotate(180deg);
+}
+
+/* .products__pills .box-container {
+    display: grid;
+    gap: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    grid-template-columns: repeat(10, 1fr);
+    padding: 2%;
+} */
+
+/* Styles pour le conteneur boîte qui sera le carousel en lui meme  */
+.products__pills .box-container {
+    /* Afficher le conteneur box en tant que conteneur flexible */
+    display: flex;
+    gap: 2rem;
+    /* Activer le défilement horizontal et l'accrochage */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2%;
+}
+
+/* .products__pills .box-container .box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20em;
+    height: 27em;
+    background-color: #f0f0f0;
+    border-radius: 4%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease, height .3s ease;
+    overflow: hidden;
+} */
+
+/* Styles pour les éléments de la boîte */
+.products__pills .box-container .box {
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Définir la largeur et la hauteur des éléments de la boîte */
+    flex: 0 0 300px; /* adjust the width of each item */
+    margin: 10px;
+    scroll-snap-align: start;
+    height: 27em;
+    /* Définir la couleur d'arrière-plan et le rayon de bordure des éléments de la boîte */
+    background-color: #f0f0f0;
+    border-radius: 4%;
+    /* Définir l'ombre de la boîte pour les éléments de la boîte */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    /* Définir l'effet de transition pour les éléments de la boîte */
+    transition: transform .3s ease, box-shadow .3s ease, height .3s ease;
+    /* Définir la propriété de débordement pour les éléments de la boîte pour cacher les contours excédants de l'image qui dépassait du border-radius */
+    overflow: hidden;
+}
+
+/* Styles pour les éléments de la boîte en survol */
+.products__pills .box-container .box:hover {
+    /* Définir la transformation et l'ombre de la boîte pour les éléments de la boîte en survol */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+    height: 30em;
+}
+
+/* Styles pour les images de produits dans les éléments de la boîte */
+.products__pills .box-container .box img.product {
+    /* Définir la largeur et la hauteur des images de produits */
+    width: 100%;
+    height: 15em;
+    /* Définir la propriété object-fit pour les images de produits pour les adapter à la taille de la boîte */
+    object-fit: cover;
+}
+
+/* Styles pour les informations de produits dans les éléments de la boîte */
+.products__pills .box-container .box .information {
+    /* Définir la marge interne pour les informations de produits */
+    padding: 1rem;
+    /* Afficher les informations de produits en tant que conteneur flexible */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Styles pour les prix de produits dans les informations de produits */
+.products__pills .box-container .box .information .price {
+    /* Afficher les prix de produits en tant que conteneur flexible */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Styles pour les boutons d'achat dans les informations de produits */
+.products__pills .box-container .box .information .btn {
+    /* Masquer les boutons d'achat par défaut */
+    display: none;
+    /* Définir les styles pour les boutons d'achat */
+    border: none;
+    background-color: #19e649;
+    color: white;
+    border-radius: 3%;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 25%;
+    bottom: 20px;
+    border-radius: 3%;
+}
+
+/* Styles pour les images dans les boutons d'achat */
+.products__pills .box-container .box .information .btn img {
+    /* Définir la largeur des images dans les boutons d'achat */
+    width: 20px;
+}
+
+/* Styles pour les boutons d'achat au survol */
+.products__pills .box-container .box:hover .information .btn {
+    /* Afficher les boutons d'achat au survol */
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Styles pour les étoiles de notation dans les informations de produits */
+.products__pills .box-container .box .information .price .stars {
+    /* Afficher les étoiles de notation en tant que conteneur flexible */
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+/* Styles pour les images d'étoiles de notation */
+.products__pills .box-container .box .information .price .stars img {
+    /* Définir la largeur des images d'étoiles de notation */
+    width: 20px;
+}
+
+/* .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .box {
+    flex: 0 0 300px; 
+    margin: 10px;
+    scroll-snap-align: start;
+  } */
+
+  /* adjust the width of each item */
+
+
+
+
+  /* partie nick */
+
+  main .sectionEntreprise{
+    margin: 20px 5px 5px 5px;
+    height: 50vh;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 200fr 200fr;
+    background-color: rgba(226, 226, 226, 0.623);
+}
+main .sectionEntreprise .imageEntreprise{
+    /* background-size: contain; */
+    background: url(../images/sunlight.PNG);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes animImageEntreprise {
+    from{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+main .sectionEntreprise .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-right: 20px;
+}
+@keyframes animInfoEntreprise {
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+main .sectionEntreprise .info em{
+    font-size: 14px;
+    color: rgba(95, 93, 93, 0.74);
+}
+main .sectionEntreprise .info .text{
+    text-align: justify;
+}
+main .sectionEntreprise .info .lien{
+    text-align: right;
+}
+main .sectionEntreprise .info .lien a{
+    text-decoration: none;
+    font-weight: 800;
+    color: rgba(107, 107, 107, 0.664);
+}
+main .sectionEntreprise .info .lien a:hover{
+   
+    color: rgb(0, 0, 0);
+}
+main .sectionEntreprise .imageEntreprise .ombreImage{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  
+    align-items: center;
+    transform: scale(0);
+    background-color: rgba(0, 0, 0, 0.63);
+    transition: .2s;
+}
+main .sectionEntreprise .imageEntreprise:hover .ombreImage {
+    
+    /* background: linear-gradient(180deg,rgba(0, 0, 0, 0.363),rgba(0, 0, 0, 0.363)),url(../image/sunlight.PNG); */
+    /* background-size: cover; */
+    transform: scale(1);
+    transition: .2s;
+
+
+}
+main .sectionEntreprise .imageEntreprise .ombreImage a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+}
+main .sectionEntreprise .imageEntreprise .ombreImage a:hover{
+   
+    color: rgb(255, 255, 255);
+   
+    background-color: transparent;
+  
+}
+
+main .sectionFondateur {
+    background-color: rgb(66, 66, 66);
+    margin:20px 5px 5px 5px ;
+    padding: 90px;
+    display: grid;
+    grid-template-columns: 250fr 250fr;
+    align-items: center;
+}
+
+main .sectionFondateur .infos{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding:10px;
+   
+}
+@keyframes animInfoFondateur {
+    from{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+main .sectionFondateur .infos hr{
+    border: none;
+    height: 1px;
+    background-color: rgb(207, 241, 207);
+    margin: 20px;
+}
+main .sectionFondateur .infos img{
+    border-radius: 550px;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    transition: 2s;
+
+}
+main .sectionFondateur .infos:hover{
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+main .sectionFondateur .infos:hover .imageJuli{
+    transform: translateY(-80px);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    transition: 1s;
+}
+main .sectionFondateur .infos div{
+    text-align: center;
+}
+main .sectionFondateur .infos p{
+   font-weight: 900;
+   color: chartreuse;
+   text-shadow: 2px 2px 2px black;
+}
+main .sectionFondateur .infos em{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.616);
+}
+main .sectionFondateur .infos2{
+    color: white;
+    transform: scale(1.2);
+}
+main .imageFin{
+
+    padding: 40px;
+    height: 350px;
+}
+main .imageFin div{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap: 40px;
+    width: max-content;
+    margin: auto;
+    height: 100%;
+    align-items: center;
+    
+    
+}
+main .imageFin div img{
+    width: 100%;
+    animation: imageFin 10s infinite ;
+    box-shadow: 5px 5px 10px;
+  
+}
+
+@keyframes imageFin {
+    0%{
+        transform: translateY(50px);
+    }
+    25%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(50px);
+    }
+}
+#deux{
+    animation: image2 10s infinite;
+}
+@keyframes image2 {
+    0%{
+        transform: translateY(-50px);
+    }
+    25%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    75%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}

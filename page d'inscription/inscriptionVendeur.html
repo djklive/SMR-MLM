@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription-vendeur</title>
+    <link rel="stylesheet" href="inscription.css">
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <header>
+        <nav>
+            <img src="image/logo_Sunlight.png" alt="">
+            <a href=""><span>S</span>un<span>L</span>ight</a>
+        </nav>
+    </header>
+
+    <!-- Choix du type d'utilisateur -->
+    <div class="container">
+        <h1>Inscription</h1>
+        <!-- <div class="user-type">
+            <label>
+                <input type="radio" name="userType" value="client" id="client" onclick="showForm('client')"> Client
+            </label>
+            <label>
+                <input type="radio" name="userType" value="vendeur" id="vendeur" onclick="showForm('vendeur')"> Vendeur
+            </label>
+        </div> -->
+        <!-- Bouton de connexion -->
+        <div class="connexion">
+            <a href="../page de connexion/PageDeConnexion.html"><span>Vous avez deja un compte ?</span> Connectez-vous</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Formulaire pour les vendeurs -->
+        <form id="vendeurForm" class="form hidden">
+            <div class="container_rigth">
+            <h2>Inscription Vendeur</h2>
+
+            <label for="pays">Pays/Région:</label>
+            <input type="text" name="pays" id="pays" placeholder="Veillez entrer votre pays/région de résidence" required>
+
+            <label for="vendeurEmail">Email:</label>
+            <input type="email" id="vendeurEmail" name="vendeurEmail" placeholder="Veuillez définir l'email comme nom de connexion" required>
+
+            <label for="vendeurPassword">Mot de passe:</label>
+            <input type="password" id="vendeurPassword" name="vendeurPassword" placeholder="Définissez le mot de passe de connexion" required>
+
+            <label for="vendeurName">Nom de l'entreprise:</label>
+            <input type="text" id="vendeurName" name="vendeurName" placeholder="Veuillez saisir le nom de votre entreprise" required>
+
+            <label for="clientName">Nom et prénom:</label>
+            <input type="text" id="clientName" name="clientName" placeholder="Veillez entrer votre nom complet" required>
+
+            <label for="telephone">Tél:</label>
+            <div style="display: flex;">
+            <input type="number" name="telephone" id="telephone"style="width: 10%" placeholder="+000">
+            <input type="number" name="telephone" id="telephone"style="width: 80%" placeholder="numéro de telephone" required>
+            </div>
+
+            <label for="vendeurSiret">Numéro de CNI:</label>
+            <input type="text" id="vendeurSiret" name="vendeurSiret" required>
+         <div style="display: flex;">
+            <input type="checkbox" name="check" id="check">
+            <label for="check" style="font-size: small; font-weight: 100;" required>En cochant la case j'accepte les conditions d'utilisation</label>
+         </div>
+            <button type="submit">S'inscrire en tant que Vendeur</button>
+         </div>
+        </form>
+    </main>
+    
+</body>
+</html>
