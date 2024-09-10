@@ -16,3 +16,21 @@ window.addEventListener('scroll',()=>{
         nav.style.backgroundColor=' #ffffff00'
     }
 })
+
+// const langue = document.getElementById('Langue');
+// const subMenu = document.querySelector('.sub-menu-1');
+
+// langue.addEventListener('mouseover', () => {
+//     subMenu.classList.add('.active');
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const sidebar = document.querySelector('.sidebar');
+
+    burgerMenu.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        burgerMenu.classList.toggle('active');
+        console.log("erreur")
+    });
+});

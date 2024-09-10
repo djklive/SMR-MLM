@@ -46,7 +46,7 @@
 .footer {
     line-height: 1.5;
     background-color: #00203f;
-    margin-top: 150px;
+    margin-top: 9,4em;
     padding: 70px 0;
     color: #fff;
 }
@@ -135,6 +135,7 @@
 
 .footer .container .row {
     display: flex;
+    align-items: center;
 }
 
 .footer .container .row .footer-col {
@@ -264,14 +265,40 @@
     text-decoration: none;
 }
 
+@media screen and (max-width:768px) {
+
+    .footer{
+        margin-top: 25em;
+    }
+
+    .footer .container .row {
+        flex-wrap: wrap;
+    }
+
+    .footer .container .footer__mail {
+        height: 14em;
+        width: 90%;
+        margin: 2em auto;
+        flex-direction: column;
+        padding: 1em .5em;
+    }
+
+}
+
 @media screen and (max-width:450px) {
 
-    .footer .container {
+    /* .footer .container {
         max-width: none;
+    } */
+
+    .footer {
+        font-size: 80%;
+        margin-top: 15em;
     }
 
     .footer .container .footer__mail {
         flex-direction: column;
+        height: 17em;
     }
 
     .footer .container .footer__mail .footer__mail-search input{
@@ -279,11 +306,13 @@
     }
 
     .footer .container .row {
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .footer .container .row .footer-col{
-        width: 100%;
+        width: 80%;
+        
     }
 }
 

@@ -2,18 +2,21 @@ const carouselWidth = document.querySelector('.carousel').offsetWidth;
 
     let nbr=6
     let p=0
-
+    let table=['','Bienvenue chez sunlight <span>nodnoqwndoiqwnoin wjdnqoqwnoidqw onwqdiowqodn</span>','Faite vous de l`argent','jhadskasjk','asdewdwedwe']
     let container = document.querySelector('.container')
     let g =document.querySelector("#g")
     let d =document.querySelector("#d")
     container.style.width=(carouselWidth*nbr)+'px'
     for (let i = 1; i <= nbr; i++) {
+        let mot=table[i]
         let div =document.createElement('div')
-
+        let h1=document.createElement('h1')
         div.className='photo'
+        h1.innerHTML=`${mot}`
         div.style.backgroundImage="url('caroussel/"+i+".JPG')"
 
         container.appendChild(div)
+        div.appendChild(h1)
     }
 
 

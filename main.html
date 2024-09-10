@@ -27,7 +27,7 @@
                     <h2><span>S</span>un<span>L</span>ight</h2>
                 </div>
                 <div class="imageEtLogin">
-                    <img src="images/logo/cart.png" alt="cart">
+                    <img src="images/logo/cart.png" class="cart" alt="cart">
 
                     <div class="user">
                         <img src="images/logo/user.png" alt="user">
@@ -46,6 +46,11 @@
                     </div>
                     
                     <a href="page d'inscription/inscriptionClient.html" class="lien">s'inscrire</a>
+
+                    <!-- Add a burger menu icon -->
+                    <div class="burger-menu">
+                        <img src="images/logo/menu.png" alt="menuBurger">
+                    </div>
                 </div>
 
             </div>
@@ -57,10 +62,45 @@
                     <a href="#">Mes achats</a>
                 </div>
                 <div class="right">
-                    <a href="#">Paramètres</a>
+                    
+                    <a href="#" class="Langue">Langue</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="#">Français - FR</a></li>
+                            <li><a href="#">English - EN</a></li>
+                        </ul>
+                    </div>
+                    <div id="google_translate_element"></div>
                     <a href="#">Contactez-nous</a>
                     <a href="page d'inscription/inscriptionVendeur.html">Devenir revendeur</a>
                 </div>
+
+            </div>
+
+
+            <!-- Add a sidebar element -->
+            <div class="sidebar">
+                <div class="nav-links">
+                    <div class="left">
+                        <a href="#" id="selection">Accueil</a>
+                        <a href="#">Liste des produits</a>
+                        <a href="#">Mes achats</a>
+                    </div>
+                    <div class="right">
+                        
+                        <a href="#" class="Langue">Langue</a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="#">Français - FR</a></li>
+                                <li><a href="#">English - EN</a></li>
+                            </ul>
+                        </div>
+                        <div id="google_translate_element"></div>
+                        <a href="#">Contactez-nous</a>
+                        <a href="page d'inscription/inscriptionVendeur.html">Devenir revendeur</a>
+                    </div>
+                </div>
+                <a href="#"><img src="images/logo/cart.png" alt="cart"></a>
             </div>
 
         </nav>
@@ -75,7 +115,7 @@
        
         <img src="icons/back_26px.png" alt="" id="d">
         <img src="icons/back_26px.png" alt="" id="g">
-        <h1>BIENVENUE CHEZ SUNLIGHT <br>Bio cosmétique <br><span>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Atque suscipit repellendus <br> numquam nobis labore explicabo earum praesentium <br> quas qui harum!</span></h1>
+        <!-- <h1>BIENVENUE CHEZ SUNLIGHT <br>Bio cosmétique <br><span>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Atque suscipit repellendus <br> numquam nobis labore explicabo earum praesentium <br> quas qui harum!</span></h1> -->
    </div> 
     <!-- end Carousel ........................................... -->
 
@@ -460,6 +500,17 @@
 
     <!-- script concernant le carousel -->
     <!-- <script src="scripts/scriptCaroussel.js"></script> -->
+
+    <script src="script.js"></script>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'fr'},
+                'google_translate_element'
+            );
+        } 
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
 </body>
 </html>

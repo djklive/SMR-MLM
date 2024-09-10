@@ -24,9 +24,9 @@ body{
     color: #ffffffda;
     font-size: 10px;
    
-    animation: entete 10s infinite;
+    animation: entête 10s infinite;
 }
-@keyframes entete {/*animation sur le texte*/
+@keyframes entête {/*animation sur le texte*/
     from{
         transform: translateX(0);
        
@@ -38,13 +38,13 @@ body{
     }
     
 }
-/* prenave ce qui est au dessus des lien de navigation dela navbar logo,nom, image chario et compte  */
+/* prenave ce qui est au dessus des lien de navigation de la navbar logo,nom, image chario et compte  */
 header nav{
    
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.411);
 
 }
-header nav .prelien{ /*diposition du logo et de image et bouton s'incrire*/
+header nav .prelien{ /*disposition du logo et de image et bouton s'incrire*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -99,7 +99,7 @@ header nav .prelien .logo h2 span{/*le s et l du logo   */
     color: rgb(18, 151, 0);
     font-size: 40px;
 }
-header nav .prelien .logo img{/*taille de limage du lgoo*/
+header nav .prelien .logo img{/*taille de limage du logo*/
     width: 60px;
     height: 50px;
 }
@@ -123,9 +123,12 @@ header nav .prelien .imageEtLogin{/*disposition des images et du login de la pre
 
 header nav .prelien .imageEtLogin img{/*taille de image de la prenav*/
     width:30px;
-
- 
 }
+
+header nav .prelien .imageEtLogin .menuBurger {/*taille de image de la prenav*/
+    display: none;
+}
+
 header nav .prelien .imageEtLogin .user{
     display: flex;
     flex-direction: row;
@@ -229,7 +232,7 @@ header nav .lienNav .left a,header nav .lienNav .right a { /*aspect des lien de 
     color: rgba(65, 65, 65, 0.63);
     text-decoration: none;
     height: 100%;
-    transform: .6s;
+    transition: .6s;
     animation: lienNav 2s ease;
 
 }
@@ -250,6 +253,125 @@ header nav .lienNav .left a:hover,header nav .lienNav .right a:hover,#selection{
     
     
 }
+
+/* Add styles for the nav-links wrapper */
+/* .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+} */
+
+/* Add styles for the burger menu icon */
+.burger-menu {
+    display: none; /* Hide the burger menu icon by default */
+}
+
+.burger-menu.active {
+    transition: .4s ease;
+    transform: scale(1.1);
+}
+
+/* header nav .lienNav {
+    display: none;
+} */
+
+/* Add styles for the sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 1rem;
+    z-index: 100;
+    transform: scale(0);
+    transform-origin: top left;
+    transform: .3s; /* Hide the sidebar by default */
+}
+
+.sidebar.open {
+    transform: scale(1); /* Show the sidebar when the burger menu icon is clicked */
+}
+
+.sidebar .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .nav-links .left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .nav-links a {
+    margin-bottom: 1rem;
+    width: max-content;
+    font-weight: 600;
+    color: rgba(65, 65, 65, 0.63);
+    text-decoration: none;
+    height: 100%;
+    transition: .6s;
+    animation: lienNav 2s ease;
+}
+@keyframes lienNav {
+    from{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sidebar .nav-links a:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+
+
+.sub-menu-1 {
+    transform: scale(0);
+    position: absolute;
+    top: 20.5%;
+    right: 22%;
+    background-color: #fff;
+    width: 150px;
+    text-align: center;
+    border-top: 1px solid black;
+ 
+    transition: .6s;
+    transform-origin: top;
+    z-index: 10000;
+}
+header .prelien .lienNav .right .Langue:hover .sub-menu-1{
+    transform: scale(100%);
+}
+
+.sub-menu-1 ul {
+    list-style: none;
+}
+
+/* #Langue:hover .sub-menu-1 {
+    transform: scale(1);
+} */
+
+
+
+/* .sub-menu-1 .active {
+    transform: scale(1);
+} */
+
+/* .header nav .lienNav .right a:hover .sub-menu-1 ul {
+    display: block;
+    margin: 10px;
+} */
+
 main{
     height: 300vh;
 }
@@ -261,4 +383,20 @@ main{
 }
 *::-webkit-scrollbar-track{
     background-color: transparent;
+}
+
+/* Add media query to show the burger menu icon and hide the nav links on small screens */
+@media (max-width: 450px) {
+
+    header nav .lienNav {
+        display: none; /* Hide the nav links on small screens */
+    }
+
+    .burger-menu {
+        display: block; /* Show the burger menu icon on small screens */
+    }
+
+    header nav .prelien .imageEtLogin .cart {
+        display: none;
+    }
 }
